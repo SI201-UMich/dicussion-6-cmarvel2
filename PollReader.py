@@ -84,9 +84,9 @@ class PollReader():
         max_trump = max(self.data_dict['Trump result'])
 
         if  max_harris > max_trump:
-            return f"Trump {(max_harris * 100):.1f}%"
+            return f"Harris {(max_harris * 100):.1f}%"
         elif max_trump > max_harris:
-            return f"Harris {(max_trump * 100):.1f}%"
+            return f"Trump {(max_trump * 100):.1f}%"
         else:
             return f"EVEN {(max_harris * 100):.1f}%"
 
@@ -128,7 +128,7 @@ class PollReader():
                    Positive values indicate an increase, negative values indicate a decrease.
         """
         early_trump = sum(self.data_dict['Harris result'][-30:]) / 30
-        early_harris = sum(self.data_dict['Trump[result]'][-30:]) / 30
+        early_harris = sum(self.data_dict['Trump result'][-30:]) / 30
 
         late_trump = sum(self.data_dict['Harris result'][:30]) / 30
         late_harris  = sum(self.data_dict['Trump result'][:30]) / 30
